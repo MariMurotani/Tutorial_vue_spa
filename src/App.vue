@@ -24,11 +24,16 @@ export default {
   name: 'app'
 }
 </script>
+
 <style lang="scss">
+html {
+  height: 100%;
+}
 body{
+  height: 100%;
+  margin: 0;
   background-color: silver;
   text-align: center;
-  height: 100%;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -41,9 +46,10 @@ body{
   margin: 0 auto;
   min-width: 600px;
   margin: 0 auto;
+  height: 100%;
 }
-.header{
-  display:block;
+.header {
+  display: block;
   .img {
     display: inline-block;
     width: 15%;
@@ -61,8 +67,10 @@ body{
   }
 }
 .footer{
-  display:block;
-  text-align: center;
+  display: block;
+  position: absolute;
+  bottom: 0%;
+  width: 80%;
   h1, h2 {
     font-weight: normal;
   }
