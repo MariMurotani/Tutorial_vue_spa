@@ -1,54 +1,48 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <router-link to="/scene2">Scene2にいくよ！</router-link>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+  <div class="scene1">
+    <p class="name">NICKNAME: {{ nickname }}</p>
+    <input class="input" v-model="nickname" placeholder="NICKNAMEを入力してください。">
+    <a class="button" href="#">START</a>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: '',
+  name: 'nickname',
   data () {
     return {
-      msg: 'コピーしたHello'
+      nickname: ''
     }
   }
 }
 </script>
 
   <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
+<style scoped lang="scss">
+.scene1{
+  font-size: 1.8rem;
+  text-align: center;
+  a div p{
+    display: block;
+    margin: 0 auto;
+    height:30pt;
+  }
+}
+.input{
+  width: 130pt;
+  height:30pt;
+}
+.button {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 70pt;
+  border: solid 1px silver;
+  border-radius: 0.5rem 0.5rem;
+  padding: 0.5rem 1.5rem;
+  margin-top: 1rem;
+  text-decoration: none;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
