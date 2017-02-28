@@ -71,6 +71,7 @@ body{
   position: absolute;
   bottom: 0%;
   width: 80%;
+  min-width: 600px;
   h1, h2 {
     font-weight: normal;
   }
