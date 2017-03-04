@@ -1,24 +1,53 @@
 <template>
   <div class="scene1">
-    <p class="name">NICKNAME: {{ nickname }}</p>
-    <input class="input" v-model="nickname" placeholder="NICKNAMEを入力してください。">
-    <a class="button" href="#">START</a>
-
+    <nickname-header></nickname-header>
+    <input-text></input-text>
+    <router-link to="/scene2" class="button">START</router-link>
   </div>
 </template>
 
 <script>
+//  インポートします。
+import Vue from 'vue'
+
+//  デフォルト値定義
 export default {
-  name: 'nickname',
-  data () {
+
+}
+
+//  ニックネーム表示用のヘッダーコンポーネントを作成
+var NickNameHeader = Vue.extend({
+  name: 'nickname_header',
+  template: '<div class="nickname">{{ property.nickname }}</div>',
+  data: function () {
     return {
-      nickname: ''
+      property: {
+        nickname: 'Default value'
+      }
     }
   }
-}
+})
+//  コンポーネントを登録
+Vue.component('nickname-header', NickNameHeader)
+
+//  インプットフォーム用のコンポーネントを作成
+var InputText = Vue.extend({
+  name: 'nickname_input',
+  template: '<input class="input" v-model="property.nickname" placeholder="NICKNAMEを入力してください。">',
+  data: function () {
+    return {
+      property: {
+        nickname: ''
+      }
+    }
+  }
+})
+//  コンポーネントを登録
+Vue.component('input-text', InputText)
+
 </script>
 
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .scene1{
   font-size: 1.8rem;
@@ -28,6 +57,10 @@ export default {
     margin: 0 auto;
     height:30pt;
   }
+}
+.nickname{
+  display: block;
+  height: 3rem;
 }
 .input{
   width: 130pt;
