@@ -4,6 +4,8 @@
       <img class="img" src="./assets/logo.png">
       <p class="title">Cat LOVER <span>vue</span></p>
     </div>
+    <div id="mount-point"></div>
+
     <div class="content">
       <router-view></router-view>
     </div>
@@ -23,6 +25,7 @@
 export default {
   name: 'app'
 }
+
 </script>
 
 <style lang="scss">
