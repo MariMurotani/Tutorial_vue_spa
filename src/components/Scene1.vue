@@ -2,7 +2,7 @@
   <div class="scene1">
     <nickname-header></nickname-header>
     <input-text></input-text>
-    <router-link to="/scene2" class="button">START</router-link>
+    <input-button></input-button>
   </div>
 </template>
 
@@ -10,20 +10,42 @@
 //  インポートします。
 import Vue from 'vue'
 
+//  データストア
+var PropertyStore = {
+  debug: true,
+  state: {
+    property: {
+      type: '1',
+      nickname: ''
+    }
+  },
+  setNickNameAction (newValue) {
+    this.debug && console.log('setMessageAction triggered with', newValue)
+    this.state.props.nickname = newValue
+  },
+  clearNickNameAction () {
+    this.debug && console.log('clearMessageAction triggered')
+    this.state.nickname = ''
+  }
+}
+
 //  デフォルト値定義
 export default {
+  data () {
+    return {
 
+    }
+  }
 }
 
 //  ニックネーム表示用のヘッダーコンポーネントを作成
 var NickNameHeader = Vue.extend({
   name: 'nickname_header',
-  template: '<div class="nickname">{{ property.nickname }}</div>',
+  template: '<div class="nickname">{{ sharedState.property.nickname }}</div>',
   data: function () {
     return {
-      property: {
-        nickname: 'Default value'
-      }
+      privateState: {},
+      sharedState: PropertyStore.state
     }
   }
 })
@@ -33,18 +55,29 @@ Vue.component('nickname-header', NickNameHeader)
 //  インプットフォーム用のコンポーネントを作成
 var InputText = Vue.extend({
   name: 'nickname_input',
-  template: '<input class="input" v-model="property.nickname" placeholder="NICKNAMEを入力してください。">',
+  template: '<input class="input" v-model="sharedState.property.nickname" placeholder="NICKNAMEを入力してください。">',
   data: function () {
     return {
-      property: {
-        nickname: ''
-      }
+      privateState: {},
+      sharedState: PropertyStore.state
     }
   }
 })
 //  コンポーネントを登録
 Vue.component('input-text', InputText)
 
+//  ボタン用のコンポーネントを作成
+var InputButton = Vue.extend({
+  name: 'input-button',
+  template: '<button class="button" v-on:click="validate">START</button>',
+  methods: {
+    validate: function (event) {
+      console.log(this.$el)
+    }
+  }
+})
+//  コンポーネントを登録
+Vue.component('input-button', InputButton)
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
