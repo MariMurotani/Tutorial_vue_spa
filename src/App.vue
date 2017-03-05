@@ -4,6 +4,8 @@
       <img class="img" src="./assets/logo.png">
       <p class="title">Cat LOVER <span>vue</span></p>
     </div>
+    <div id="mount-point"></div>
+
     <div class="content">
       <router-view></router-view>
     </div>
@@ -23,6 +25,7 @@
 export default {
   name: 'app'
 }
+
 </script>
 
 <style lang="scss">
@@ -71,6 +74,7 @@ body{
   position: absolute;
   bottom: 0%;
   width: 80%;
+  min-width: 600px;
   h1, h2 {
     font-weight: normal;
   }
