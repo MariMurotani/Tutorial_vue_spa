@@ -11,6 +11,15 @@
 import Vue from 'vue'
 import {NickNameHeader, InputText, InputButton} from './forms/Headers.js'
 
+//  デフォルト値定義
+export default {
+  data () {
+    return {
+
+    }
+  }
+}
+
 //  コンポーネントを登録
 Vue.component('nickname-header', NickNameHeader)
 //  コンポーネントを登録

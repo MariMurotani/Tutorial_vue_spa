@@ -10,9 +10,14 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/hello',
       name: 'Hello',
       component: Hello
+    },
+    {
+      path: '/',
+      name: 'Index',
+      redirect: { name: 'Scene1' }
     },
     {
       path: '/scene1',
