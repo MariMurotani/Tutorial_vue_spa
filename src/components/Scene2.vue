@@ -9,7 +9,7 @@
 <script>
 //  インポート
 import Vue from 'vue'
-import {NickNameHeader} from './forms/Headers.js'
+import NickNameHeader from './forms/Header'
 
 //  デフォルト値定義
 export default {
