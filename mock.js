@@ -12,6 +12,21 @@ mocky.createServer([{
   }
 },
 {
+// simple GET route without request body to match
+  url: '/profile_wait',
+  method: 'get',
+  headers: {'Content-type': 'text/json'},
+  res: function(req, res, callback) {
+    setTimeout(function() {
+      callback(null, {
+        status: 200,
+        headers: {'Content-type': 'text/html', 'Access-Control-Allow-Origin': 'http://localhost:8080'},
+        body: JSON.stringify({'nickname': ''})
+      });
+    }, 2000);
+  }
+},
+{
 // POST route with request body to match and respose with status, headers and body
   url: '/profile',
   method: 'post',
