@@ -12,17 +12,15 @@ import Vue from 'vue'
 import InputButton from './forms/InputButton'
 import NickNameHeader from './forms/Header'
 import InputText from './forms/InputText'
-import axios from 'axios'
+import PropertyStore from '../models/PropertyStore.js'
 
 export default {
   created: function () {
-    axios.get('http://127.0.0.1:4321/profile_wait')
-      .then(response => {
-        console.log(response.data) // mockData
-        console.log(response.status) // 200
-      })
+
   }
 }
+//  ユーザー情報取得
+PropertyStore.dispatch('getUser')
 
 //  コンポーネントを登録
 Vue.component('nickname-header', NickNameHeader)

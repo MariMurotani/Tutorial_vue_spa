@@ -1,20 +1,46 @@
+import Vue from 'vue'
+import Vuex from 'vuex'
+import axios from 'axios'
+Vue.use(Vuex)
+
 //  データストア
-var PropertyStore = {
-  debug: true,
+var PropertyStore = new Vuex.Store({
   state: {
     property: {
-      type: '1',
-      nickname: ''
+      nickname: 'Loading.....'
     }
   },
-  validate () {
-    this.debug && console.log('setMessageAction triggered with', this.state.property.nickname)
-
-    console.log(this.state.property.nickname.length)
-    if (this.state.property.nickname.length <= 3) {
-      throw new Error('3文字以上入力してください')
+  mutations: {
+    increment (state, n) {
+      state.count += n
+    },
+    getUser (state) {
+      axios.get('http://127.0.0.1:4321/profile_wait')
+        .then(response => {
+          if (response.status === 200) {
+            state.property.nickname = response.data.nickname
+          }
+        })
+    },
+    setUser (state) {
+      axios.post('http://127.0.0.1:4321/profile')
+        .then(response => {
+          if (response.status !== 200) {
+            state.property.nickname = 'eroor'
+          }
+        })
     }
-    return true
+  },
+  actions: {
+    getUser ({ commit }) {
+      commit('getUser')
+    },
+    setUser ({ state, commit, rootState }) {
+      if (state.property.nickname.length <= 3) {
+        throw new Error('3文字以上入力してください')
+      }
+      commit('setUser')
+    }
   }
-}
+})
 export default PropertyStore

@@ -16,13 +16,9 @@ export default {
   },
   methods: {
     validate: function (event) {
-      console.log(this.$el)
-      var valid = false
       try {
-        valid = this.$data.sharedState.validate()
-        if (valid) {
-          this.$router.push('/scene2')
-        }
+        this.$data.sharedState.dispatch('setUser')
+        this.$router.push('/scene2')
       } catch (e) {
         alert(e.message)
       }
