@@ -5,7 +5,11 @@ mocky.createServer([{
   url: '/profile',
   method: 'get',
   headers: {'Content-type': 'text/json'},
-  res: JSON.stringify({'nickname': ''})
+  res: {
+    status: 200,
+    headers: {'Content-type': 'text/html', 'Access-Control-Allow-Origin': 'http://localhost:8080'},
+    body: JSON.stringify({'nickname': ''})
+  }
 },
 {
 // POST route with request body to match and respose with status, headers and body
@@ -13,7 +17,11 @@ mocky.createServer([{
   method: 'post',
   req: '',
   headers: {'Content-type': 'text/json'},
-  res: JSON.stringify({'status': 'ok'})
+  res: {
+    status: 200,
+    headers: {'Content-type': 'text/html', 'Access-Control-Allow-Origin': 'http://localhost:8080'},
+    body: JSON.stringify({'status': 'ok'})
+  }
 },
 {
 // PUT route with dynamic response body
@@ -21,7 +29,11 @@ mocky.createServer([{
   method: 'put',
   req: '',
   headers: {'Content-type': 'text/json'},
-  res: JSON.stringify({'status': 'ok'})
+  res: {
+    status: 200,
+    headers: {'Content-type': 'text/html', 'Access-Control-Allow-Origin': 'http://localhost:8080'},
+    body: JSON.stringify({'status': 'ok'})
+  }
 },
 {
 // DELETE route with dynamic response body
@@ -29,5 +41,9 @@ mocky.createServer([{
   method: 'delete',
   req: '',
   headers: {'Content-type': 'text/json'},
-  res: JSON.stringify({'status': 'ok'})
+  res: {
+    status: 200,
+    headers: {'Content-type': 'text/html', 'Access-Control-Allow-Origin': 'http://localhost:8080'},
+    body: JSON.stringify({'status': 'ok'})
+  }
 }]).listen(4321);
