@@ -13,8 +13,12 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "axios": "^0.15.3",
+    "install": "^0.8.7",
     "vue": "^2.2.1",
-    "vue-router": "^2.2.0"
+    "vue-model": "0.0.3",
+    "vue-router": "^2.2.0",
+    "vuex": "^2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
@@ -60,6 +64,7 @@
     "karma-webpack": "^2.0.2",
     "lolex": "^1.5.2",
     "mocha": "^3.2.0",
+    "mocky": "^0.1.11",
     "nightwatch": "^0.9.12",
     "node-sass": "^4.5.0",
     "opn": "^4.0.2",

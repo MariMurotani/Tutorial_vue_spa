@@ -12,9 +12,15 @@ import Vue from 'vue'
 import InputButton from './forms/InputButton'
 import NickNameHeader from './forms/Header'
 import InputText from './forms/InputText'
+import PropertyStore from '../models/PropertyStore.js'
 
 export default {
+  created: function () {
+
+  }
 }
+//  ユーザー情報取得
+PropertyStore.dispatch('getUser')
 
 //  コンポーネントを登録
 Vue.component('nickname-header', NickNameHeader)
@@ -22,7 +28,6 @@ Vue.component('nickname-header', NickNameHeader)
 Vue.component('input-text', InputText)
 //  コンポーネントを登録
 Vue.component('input-button', InputButton)
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
