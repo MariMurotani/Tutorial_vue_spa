@@ -1,8 +1,13 @@
 <template>
   <div class="scene1">
-    <nickname-header></nickname-header>
-    <input-text></input-text>
-    <input-button></input-button>
+    <div v-show="is_loading">
+      Loading......
+  </div>
+  <div v-show="!is_loading">
+      <nickname-header></nickname-header>
+      <input-text></input-text>
+      <input-button></input-button>
+    </div>
   </div>
 </template>
 
@@ -13,10 +18,13 @@ import InputButton from './forms/InputButton'
 import NickNameHeader from './forms/Header'
 import InputText from './forms/InputText'
 import PropertyStore from '../models/PropertyStore.js'
+import {StatusConfig} from '../config/Status.js'
 
 export default {
-  created: function () {
-
+  computed: {
+    is_loading: function () {
+      return PropertyStore.state.status === StatusConfig.INITIALIZE
+    }
   }
 }
 //  ユーザー情報取得
