@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import {StatusConfig} from '../config/Status.js'
 Vue.use(Vuex)
 
 //  データストア
 var PropertyStore = new Vuex.Store({
   state: {
+    status: StatusConfig.INITIALIZE,
     property: {
       nickname: 'Loading.....'
     }
@@ -16,6 +18,7 @@ var PropertyStore = new Vuex.Store({
     },
     getUser (state, response) {
       state.property.nickname = response.data.nickname
+      state.status = StatusConfig.DATA_LOADED
     },
     setUser (state, nickname) {
       state.property.nickname = nickname
