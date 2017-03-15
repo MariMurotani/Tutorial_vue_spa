@@ -48,10 +48,11 @@ body{
   width: 80%;
   margin: 0 auto;
   min-width: 600px;
+  min-height: 700px;
   margin: 0 auto;
-  height: 100%;
 }
 .header {
+  position: relative;
   display: block;
   .img {
     display: inline-block;
@@ -70,11 +71,15 @@ body{
   }
 }
 .footer{
+  clear:both;
   display: block;
-  position: absolute;
-  bottom: 0%;
+  position: relative;
+  bottom: 0px;
   width: 80%;
   min-width: 600px;
+  h4{
+    margin: auto;
+  }
   h1, h2 {
     font-weight: normal;
   }
