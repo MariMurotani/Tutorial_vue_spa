@@ -18,7 +18,7 @@ export default {
 </script>
 <style scoped>
 .input{
-  width: 130pt;
+  width: 40%;
   height:30pt;
 }
 </style>

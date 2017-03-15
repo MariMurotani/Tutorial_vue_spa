@@ -10,7 +10,7 @@
       <router-view></router-view>
     </div>
     <div class="footer">
-      <h2>Cat LOVER Co., Ltd.</h2>
+      <h4>Cat LOVER Co., Ltd.</h4>
       <ul>
         <li><a href="" target="_blank">TOP</a></li>
         <li><a href="" target="_blank">リクルート</a></li>

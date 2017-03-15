@@ -31,7 +31,6 @@ export default {
   display: block;
   position: relative;
   margin: 0 auto;
-  width: 70pt;
   background-color: white;
   border: solid 1px silver;
   border-radius: 0.5rem 0.5rem;
