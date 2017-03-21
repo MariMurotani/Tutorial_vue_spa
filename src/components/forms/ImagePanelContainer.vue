@@ -14,7 +14,7 @@
               <p>{{ item.comment }}</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <div class="heart"></div>
             </div>
           </div>
         </div>
@@ -53,5 +53,34 @@ export default{
   min-height: 120px;
   height: 120px;
   position: relative;
+}
+
+.heart{
+  position:relative;
+  margin:0 auto;
+  width:15px;
+  height:17px;
+}
+.heart:before,
+.heart:after{
+  position:absolute;
+  content:"";
+  width:9.5px;
+  height:15px;
+  background:pink;
+}
+.heart:before{
+  left:0px;
+  transform:rotate(-45deg);
+  border-radius:10px 10px 0 0;
+}
+.heart:after{
+  left:4px;
+  transform:rotate(45deg);
+  border-radius:10px 10px 0 0;
+}
+
+.heart .disable:before,.heart .disable:after {
+   background:light-grey;
 }
 </style>
