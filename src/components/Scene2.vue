@@ -35,6 +35,7 @@ Vue.component('image-panel-container', ImagePanelContainer)
   text-align: center;
   width: 92%;
   height: 100%;
+  margin:auto auto;
 }
 .image_panel{
   top: 200px;

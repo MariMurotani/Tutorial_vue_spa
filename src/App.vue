@@ -82,7 +82,8 @@ body{
   position: relative;
   bottom: 10%;
   width: 80%;
-  margin: auto;
+  margin: auto auto;
+  pading: 1rem;
   h4{
     width: 100%;
     margin: auto;
