@@ -46,6 +46,7 @@ body{
   color: #2c3e50;
   background-color: white;
   width: 80%;
+  height: 100%;
   margin: 0 auto;
   min-width: 600px;
   min-height: 700px;
@@ -70,14 +71,20 @@ body{
     }
   }
 }
+.content{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
 .footer{
-  clear:both;
+  clear: both;
   display: block;
   position: relative;
-  bottom: 0px;
+  bottom: 10%;
   width: 80%;
-  min-width: 600px;
+  margin: auto;
   h4{
+    width: 100%;
     margin: auto;
   }
   h1, h2 {

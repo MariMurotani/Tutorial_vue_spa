@@ -23,7 +23,7 @@ mocky.createServer([{
         headers: {'Content-type': 'text/html', 'Access-Control-Allow-Origin': 'http://localhost:8080'},
         body: JSON.stringify({'nickname': ''})
       });
-    }, 1000);
+    }, 500);
   }
 },
 {

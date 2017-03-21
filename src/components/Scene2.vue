@@ -28,13 +28,17 @@ Vue.component('image-panel-container', ImagePanelContainer)
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style scoped lang="scss">
-.scene2{
+.scene2 {
+  display: block;
+  position: realative;
   font-size: 1.8rem;
   text-align: center;
+  width: 92%;
+  height: 100%;
 }
 .image_panel{
-  width:90%;
   top: 200px;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
