@@ -14,8 +14,7 @@
               <p>{{ item.comment }}</p>
             </div>
             <div class="card-action">
-              <div v-if="item.like" class="heart" v-on:click="like"></div>
-              <div v-else class="heart_disable" v-on:click="like"></div>
+              <div :class="{ heart: item.like , heart_disable: !item.like }" v-on:click="like"></div>
             </div>
           </div>
         </div>
@@ -41,6 +40,9 @@ export default{
   },
   methods: {
     like: function (event) {
+      var target = $(event.target)
+      var index = target.attr('data-index')
+      console.log(index)
       this.send(true)
     },
     send: function (boolean) {
