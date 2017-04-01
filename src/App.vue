@@ -10,7 +10,7 @@
       <router-view></router-view>
     </div>
     <div class="footer">
-      <h2>Cat LOVER Co., Ltd.</h2>
+      <h4>Cat LOVER Co., Ltd.</h4>
       <ul>
         <li><a href="" target="_blank">TOP</a></li>
         <li><a href="" target="_blank">リクルート</a></li>
@@ -46,12 +46,14 @@ body{
   color: #2c3e50;
   background-color: white;
   width: 80%;
+  height: 100%;
   margin: 0 auto;
   min-width: 600px;
+  min-height: 700px;
   margin: 0 auto;
-  height: 100%;
 }
 .header {
+  position: relative;
   display: block;
   .img {
     display: inline-block;
@@ -69,12 +71,23 @@ body{
     }
   }
 }
+.content{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
 .footer{
+  clear: both;
   display: block;
-  position: absolute;
-  bottom: 0%;
+  position: relative;
+  bottom: 10%;
   width: 80%;
-  min-width: 600px;
+  margin: auto auto;
+  pading: 1rem;
+  h4{
+    width: 100%;
+    margin: auto;
+  }
   h1, h2 {
     font-weight: normal;
   }
