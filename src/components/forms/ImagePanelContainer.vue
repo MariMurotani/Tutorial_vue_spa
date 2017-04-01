@@ -14,7 +14,8 @@
               <p>{{ item.comment }}</p>
             </div>
             <div class="card-action">
-              <div class="heart"></div>
+              <div v-if="item.like" class="heart" v-on:click="like"></div>
+              <div v-else class="heart_disable" v-on:click="like"></div>
             </div>
           </div>
         </div>
@@ -29,13 +30,21 @@ export default{
   data () {
     return {
       items: [
-        {title: '猫1', comment: 'すき', image: '/static/images1.jpeg'},
-        {title: '猫2', comment: 'ラブ', image: '/static/images2.jpeg'},
-        {title: '猫2', comment: 'ラブ', image: '/static/images3.jpeg'},
-        {title: '猫1', comment: 'すき', image: '/static/images4.jpeg'},
-        {title: '猫2', comment: 'ラブ', image: '/static/images5.jpeg'},
-        {title: '猫2', comment: 'ラブ', image: '/static/images6.jpeg'}
+        {title: '猫1', comment: 'すき', image: '/static/images1.jpeg', like: true},
+        {title: '猫2', comment: 'ラブ', image: '/static/images2.jpeg', like: false},
+        {title: '猫2', comment: 'ラブ', image: '/static/images3.jpeg', like: true},
+        {title: '猫1', comment: 'すき', image: '/static/images4.jpeg', like: false},
+        {title: '猫2', comment: 'ラブ', image: '/static/images5.jpeg', like: false},
+        {title: '猫2', comment: 'ラブ', image: '/static/images6.jpeg', like: false}
       ]
+    }
+  },
+  methods: {
+    like: function (event) {
+      this.send(true)
+    },
+    send: function (boolean) {
+      console.log(boolean)
     }
   }
 }
@@ -80,7 +89,29 @@ export default{
   border-radius:10px 10px 0 0;
 }
 
-.heart .disable:before,.heart .disable:after {
-   background:light-grey;
+.heart_disable{
+  position:relative;
+  margin:0 auto;
+  width:15px;
+  height:17px;
 }
+.heart_disable:before,
+.heart_disable:after{
+  position:absolute;
+  content:"";
+  width:9.5px;
+  height:15px;
+  background:grey;
+}
+.heart_disable:before{
+  left:0px;
+  transform:rotate(-45deg);
+  border-radius:10px 10px 0 0;
+}
+.heart_disable:after{
+  left:4px;
+  transform:rotate(45deg);
+  border-radius:10px 10px 0 0;
+}
+
 </style>
