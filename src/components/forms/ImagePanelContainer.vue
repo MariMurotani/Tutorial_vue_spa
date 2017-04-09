@@ -14,7 +14,7 @@
               <p>{{ item.comment }}</p>
             </div>
             <div class="card-action">
-              <div :class="{ heart: item.like , heart_disable: !item.like }" :data-index="index" v-on:click="like"></div>
+              <div :class="{ heart: item.like , heart_disable: !item.like }" v-on:click="like(index, $event)"></div>
             </div>
           </div>
         </div>
@@ -39,9 +39,7 @@ export default{
     }
   },
   methods: {
-    like: function (event) {
-      var target = $(event.target)
-      var index = target.attr('data-index')
+    like: function (index, event) {
       this.items[index].like = !this.items[index].like
       this.send(index, this.items[index].like)
     },
